@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Royal Function Hall Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Royal Function Hall</h1><p>Complete Online Function Hall Booking</p></header>
+<nav><button onclick="showPage('booking')">Book Hall</button><button onclick="showPage('list');loadBookings()">View Bookings</button></nav>
+<main>
+<section id="booking" class="page">
+<div class="card"><h2>Book Your Function</h2>
+<form id="bookingForm">
+<input id="name" placeholder="Customer Name" required>
+<input id="phone" placeholder="10-digit Phone Number" pattern="[0-9]{10}" required>
+<input id="email" type="email" placeholder="Email" required>
+<select id="event" required><option value="">Select Event</option><option>Marriage</option><option>Birthday</option><option>Reception</option><option>Engagement</option><option>Corporate Event</option></select>
+<input id="date" type="date" required>
+<input id="guests" type="number" min="10" value="100" required>
+<select id="hall" required><option value="Grand Hall|85000">Grand Hall — ₹85,000</option><option value="Royal Hall|60000">Royal Hall — ₹60,000</option><option value="Mini Hall|40000">Mini Hall — ₹40,000</option></select>
+<select id="food" required><option value="Veg|300">🥗 Veg — ₹300/person</option><option value="Veg|400">🥗 Premium Veg — ₹400/person</option><option value="Non-Veg|350">🍗 Non-Veg — ₹350/person</option><option value="Non-Veg|500">🍗 Premium Non-Veg — ₹500/person</option></select>
+<select id="payment"><option>UPI</option><option>Card</option><option>Net Banking</option><option>Pay at Hall</option></select>
+<div id="total" class="total">Total: ₹115,000</div>
+<button type="submit">Confirm Booking</button>
+</form><div id="message"></div></div>
+</section>
+<section id="list" class="page hidden"><div class="card"><h2>All Bookings</h2><button onclick="loadBookings()">Refresh List</button><div id="bookingList"></div></div></section>
+</main>
+<script src="app.js"></script>
+</body></html>
